@@ -6,8 +6,8 @@
   #container {
     display: grid;
     grid-gap: 1px; /* Add some gap between cells */
-    width: 500px; /* Adjust as needed */
-    height: 500px; /* Adjust as needed */
+    width: 590px; /* Adjust as needed */
+    height: 590px; /* Adjust as needed */
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
   }
