@@ -18,5 +18,12 @@
     text-align: center;
   }
   
+  .button-container {
+    text-align: right;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    
 
+  }
   

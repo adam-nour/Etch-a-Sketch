@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id = "container">
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="button-container">
+      <button onclick="clickPrompt()">GRID SIZE</button>
     </div>
+    <div id="container"></div>
 
     <script>
-        const container = document.getElementById("container");
+      function clickPrompt() {
+        let gridSize = prompt("Please enter a grid size");
+        clearGrid();
+        makeRows(gridSize, gridSize);
+      }
 
-function makeRows(rows, cols) {
-  container.style.setProperty('--grid-rows', rows);
-  container.style.setProperty('--grid-cols', cols);
-  for (c = 0; c < (rows * cols); c++) {
-    let cell = document.createElement("div");
-    container.appendChild(cell).className = "grid-item";
-    cell.addEventListener('mouseenter', function (e) {
-  e.target.style.background = 'blue';
-  
-});
-  };
-};
+      function clearGrid() {
+        while (container.firstChild) {
+          container.removeChild(container.firstChild);
+        }
+      }
 
-makeRows(100, 100);
+      const container = document.getElementById("container");
+
+      function makeRows(rows, cols) {
+        container.style.setProperty("--grid-rows", rows);
+        container.style.setProperty("--grid-cols", cols);
+        for (c = 0; c < rows * cols; c++) {
+          let cell = document.createElement("div");
+          container.appendChild(cell).className = "grid-item";
+          cell.addEventListener("mouseenter", function (e) {
+            e.target.style.background = "blue";
+          });
+        }
+      }
     </script>
-</body>
+  </body>
 </html>
